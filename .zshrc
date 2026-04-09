@@ -109,6 +109,7 @@ export PATH=/c/WINDOWS/System32/OpenSSH:$PATH
 
 
 export PATH=$HOME/.local/bin:$PATH
+export USER_SCRIPTS=/d/.config/scripts
 
 # Starship
 if [[ "$OSTYPE" == "cygwin" ]]; then
@@ -132,8 +133,6 @@ if [ -d "$FNM_PATH" ]; then
 fi
 
 eval "$(fnm env --use-on-cd --shell zsh)"
-
-
 
 
 if [[ "$TERM_PROGRAM" == "vscode" ]]; then
@@ -163,6 +162,7 @@ if [[ "$OSTYPE" == "cygwin" ]]; then
   alias cfg='cd D:/.config'
   alias nv='cd D:/NOVUS'
   alias mp='cd D:/Morphis'
+  alias nom='echo "Use Ubuntu"'
 else
   export NUGET_PACKAGES="/d/packages/nuget-global"
   export LG_CONFIG_FILE="~/.config/lazygit/config.yml"
@@ -171,6 +171,7 @@ else
   alias cfg='cd /d/.config'
   alias nv='cd /d/NOVUS'
   alias mp='cd /d/Morphis'
+  alias nom='/d/tooling/nom/nom'
 fi
 
 alias nvg='nv; lg'

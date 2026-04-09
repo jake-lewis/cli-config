@@ -4,6 +4,7 @@
 continuation_prompt = '▶▶ '
 
 format = """
+$os\
 [](bg:#769ff0 fg:#a3aed2)\
 
 $directory\

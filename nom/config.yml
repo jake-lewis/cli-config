@@ -9,7 +9,7 @@ database: nom.db
 ordering: desc
 openers:
   - regex: "royalroad"
-    cmd: "echo %s"
+    cmd: "/d/.config/scripts/nom_open_rr %s"
     takeover: true
 filtering:
   defaultIncludeFeedName: false
