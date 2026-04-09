@@ -2,6 +2,7 @@ git:
     commitPrefix:
         - pattern: "^.*?([A-Z]{2,4}-[0-9]{1,5}).*?"
           replace: '[$1] '
+    overrideGpg: true
 gui:
   nerdFontsVersion: "3"
 keybinding:
