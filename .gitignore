@@ -1,0 +1,11 @@
+cagent/
+Code/
+configstore/
+dconf/
+gh/hosts.yml
+git/
+go/telemetry/
+gtk-3.0/
+micro/buffers/
+nom/nom.db
+wslu/
