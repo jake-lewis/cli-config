@@ -1,0 +1,56 @@
+git:
+    commitPrefix:
+        - pattern: "^.*?([A-Z]{2,4}-[0-9]{1,5}).*?"
+          replace: '[$1] '
+gui:
+  nerdFontsVersion: "3"
+keybinding:
+  files:
+    copyFileInfoToClipboard: "<insert>"
+  commits:
+    copyCommitAttributeToClipboard: "<insert>"
+customCommands:
+    - key: i
+      command: 'git update-index --assume-unchanged {{.SelectedFile.Name}}'
+      context: files
+      description: "Ignore file changes"
+      loadingText: "Ignoring..."
+      output: 'log'
+    - key: u
+      command: 'git update-index --no-assume-unchanged {{.Form.Ignored}}'
+      context: files
+      description: "Resume tracking file changes"
+      output: 'log'
+      prompts:
+            - type: 'menuFromCommand'
+              title: 'Ignored Files'
+              key: 'Ignored'
+              command: 'git ignored'
+              filter: '(\S+)$'
+              valueFormat: '{{.group_1}}'
+    - key: y
+      description: yazi
+      command: yazi {{ .SelectedWorktree.Path }}
+      context: global
+      output: terminal
+    - key: x
+      description: Custom Context Commands
+      commandMenu:
+        - key: o
+          description: open in..
+          commandMenu:
+            - key: c
+              description: open file in vscode
+              command: 'code {{.SelectedWorktree.Path}}{{if .SelectedFile }} -g {{.SelectedFile.Name}}{{end}}'
+            - key: s
+              description: open in Visual Studio
+              command: 'devenv {{ .Form.Sln | quote }} & true'
+              output: terminal
+              prompts:
+                - type: 'menuFromCommand'
+                  title: 'sln files'
+                  key: 'Sln'
+                  command: 'find . -maxdepth 3 -name "*.sln" -type f'
+            - key: g
+              description: open in github
+              command: 'gh browse --branch $(git rev-parse --abbrev-ref HEAD)'

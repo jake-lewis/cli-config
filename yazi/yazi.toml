@@ -1,0 +1,31 @@
+"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+
+[mgr]
+show_hidden = true
+ratio = [1, 2, 5]
+
+[opener]
+VS = [
+ { run = "devenv %s", orphan=true, desc = "Open in Visual Studio", for="linux"}
+]
+VSC = [
+ { run = "code %s", orphan=true, desc="Open in VSCode"}
+]
+MICRO = [
+	{ run = "micro %s", orphan=true, desc = "Open in Micro"}
+]
+lazygit-filter = [
+ { run = "repo=\"$(git -C '%s1' rev-parse --show-toplevel)\" &&  lazygit --path=\"$repo\" --filter=\"$(realpath --relative-base=$repo %s1)\" --screen-mode=normal", block=true, desc="Lazygit(filtered)"}
+]
+lazygit = [
+ { run = "lazygit --path=\"$(git -C '%s1' rev-parse --show-toplevel)\"", block = true, desc = "Lazygit" }
+]
+[open]
+prepend_rules = [
+ { url = "", use = ["MICRO", "open", "reveal"] },
+ { url = "*.sln", use = "VS" },
+ { url = "*/", use = ["MICRO", "open", "reveal", "lazygit", "lazygit-filter"] },
+]
+append_rules = [
+ { url = "*", use = [ "MICRO", "VSC", "open", "reveal" ] }
+]

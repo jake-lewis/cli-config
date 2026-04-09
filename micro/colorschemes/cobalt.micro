@@ -1,0 +1,70 @@
+# Cobalt color scheme
+# Editor colors
+color-link default "#FFFFFF,#193549"
+# #09223F
+color-link cursor-line "#003b70"
+# color-link color-column "#26425D"
+color-link statusline "#F8F8F8,#008AFF"            
+color-link tabbar "#F8F8F8,#008AFF"               
+color-link indent-char "#F8F8F8,#09223F"           
+# Line number colour scheme
+color-link line-number "#888888,#111111"           
+color-link current-line-number "#888888,#111111"   
+# Gutter color scheme
+color-link gutter-info "#00BF8C"
+color-link gutter-error "#990000"
+color-link gutter-warning "#FF518C"
+# Message color scheme
+color-link message "#0088FF"
+color-link error-message "#990000"
+# Syntax colors
+color-link error "bold #990000"
+# comment
+color-link comment "#0088FF"
+# identifier
+color-link identifier "#80ffbb"
+color-link identifier.var "#80ffbb"
+# constant and subgroups
+color-link constant "#ffee80"
+color-link constant.string "#42D915"
+color-link constant.number "#FF518C"
+color-link constant.bool "#42D915"
+# statement
+color-link statement "bold #FA9E18"
+# symbol and subgroups
+color-link symbol "#FA9E18"
+color-link symbol.bracket "#FA9E18"
+# color-link symbol.brackets "default"
+# preproc and subgroups
+color-link preproc "#80ffbb"
+color-link preproc.shebang "#0088FF"    
+# type and subgroups
+color-link type "bold #FA9E18"
+# color-link type "bold #80ffbb"
+# special
+color-link special "bold #ff9d00"
+# todo
+color-link todo "bold #ffee80"
+
+ # from Gedit cobalt style
+ # faded_yellow"                value="#ffee80"/>
+ # bright_orange"               value="#ff9d00"/>
+ # faded_orange"                value="#ffb054"/>
+ # nail_polish_pink"            value="#ff0044"/>
+ # neon_pink"                   value="#ffdd00"/>
+ # sky_blue"                    value="#0088ff"/>
+ # teal_blue"                   value="#80ffbb"/>
+ # light_blue"                  value="#0065bf"/>
+ # medium_blue"                 value="#003b70"/>
+ # dark_blue"                   value="#001b33"/>
+ # black_blue"                  value="#000d1a"/>
+ # white"                       value="#ffffff"/>
+ # pale_grey"                   value="#eeeeee"/>
+ # steel_grey"                  value="#333333"/>
+ # spring_green"                value="#3ad900"/>
+ # sea_green"                   value="#00BF8C"/>
+ # light_grey"                  value="#cccccc"/>
+ # dark_red"                    value="#990000"/>
+ # bluish_grey"                 value="#777777"/>
+ # steelblue3"                  value="#4f94cd"/>
+ # dark_medium_blue_blend"      value="#00213F"/>

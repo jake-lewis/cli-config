@@ -1,0 +1,24 @@
+configpath: ~/.config/nom/config.yml
+version: ""
+feeds:
+  - url: https://www.royalroad.com/fiction/syndication/37155
+    name: Knight and Smith
+  - url: https://www.royalroad.com/fiction/syndication/82152
+    name: SbMG
+database: nom.db
+ordering: desc
+openers:
+  - regex: "royalroad"
+    cmd: "echo %s"
+    takeover: true
+filtering:
+  defaultIncludeFeedName: false
+theme:
+  glamour: dark
+  titleColor: "62"
+  titleColorFg: "231"
+  filterColor: "62"
+  selectedItemColor: "170"
+  readIcon: ✓
+http:
+  mintls: TLS 1.2
