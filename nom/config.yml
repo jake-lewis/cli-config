@@ -5,6 +5,16 @@ feeds:
     name: Knight and Smith
   - url: https://www.royalroad.com/fiction/syndication/82152
     name: SbMG
+  - url: https://www.royalroad.com/fiction/syndication/39408
+    name: Beware of Chicken
+  - url: https://www.royalroad.com/fiction/syndication/76478
+    name: Hoard
+  - url: https://www.royalroad.com/fiction/syndication/92080
+    name: Amelia Thornheart
+  - url: https://www.royalroad.com/fiction/syndication/62152
+    name: Ghost in the City
+  - url: https://www.royalroad.com/fiction/syndication/80787
+    name: Nova Wars
 database: nom.db
 ordering: desc
 openers:
