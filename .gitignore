@@ -8,4 +8,5 @@ go/telemetry/
 gtk-3.0/
 micro/buffers/
 nom/nom.db
+scripts/verisk
 wslu/
