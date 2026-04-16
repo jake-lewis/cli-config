@@ -189,3 +189,12 @@ function yy() {
 	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+function rr() {
+	echo $1 | ~/.config/scripts/rr_standalone.py
+}
+
+function verisk-clone() {
+	local url=$(echo $1 | sed 's/.com/.com-verisk/')
+	git clone $url $2
+}
