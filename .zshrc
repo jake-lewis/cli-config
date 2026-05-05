@@ -162,6 +162,7 @@ if [[ "$OSTYPE" == "cygwin" ]]; then
   alias cfg='cd D:/.config'
   alias nv='cd D:/NOVUS'
   alias mp='cd D:/Morphis'
+  alias db='cd D:/DB_Patches'
   alias nom='echo "Use Ubuntu"'
 else
   export NUGET_PACKAGES="/d/packages/nuget-global"
@@ -176,6 +177,9 @@ fi
 
 alias nvg='nv; lg'
 alias mpg='mp; lg'
+alias dbg='db; lg'
+alias csc='cfg; cd ./scripts'
+alias vsc='csc; cd ./verisk'
 alias zc='micro ~/.zshrc +110:1'
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
