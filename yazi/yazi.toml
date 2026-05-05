@@ -5,27 +5,31 @@ show_hidden = true
 ratio = [1, 2, 5]
 
 [opener]
+micro = [
+	{ run = "micro %s", block=true, desc = "Micro"}
+]
+micro-new = [
+	{ run = "(cd %s && micro)", block=true, desc = "Micro - Create File"}
+]
+code = [
+ 	{ run = "code %s", orphan=true, desc="VS Code"},
+	{ run = "code %s -r", orphan=true, desc="VS Code - Reuse Window"},
+	{ run = "code %s -n", orphan=true, desc="VS Code - New Window"}
+]
+rider = [
+	{ run = "rider64.exe %s", orphan=true, desc="Open in Rider" }
+]
 VS = [
- { run = "devenv %s", orphan=true, desc = "Open in Visual Studio", for="linux"}
-]
-VSC = [
- { run = "code %s", orphan=true, desc="Open in VSCode"}
-]
-MICRO = [
-	{ run = "micro %s", orphan=true, desc = "Open in Micro"}
-]
-lazygit-filter = [
- { run = "repo=\"$(git -C '%s1' rev-parse --show-toplevel)\" &&  lazygit --path=\"$repo\" --filter=\"$(realpath --relative-base=$repo %s1)\" --screen-mode=normal", block=true, desc="Lazygit(filtered)"}
-]
-lazygit = [
- { run = "lazygit --path=\"$(git -C '%s1' rev-parse --show-toplevel)\"", block = true, desc = "Lazygit" }
+	{ run = "'C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\IDE\\devenv.exe' %s", orphan=true, desc = "Visual Studio", for="windows" },
+	{ run = "/c/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/devenv.exe", orphan=true, desc = "Visual Studio", for="unix" }
 ]
 [open]
-prepend_rules = [
- { url = "", use = ["MICRO", "open", "reveal"] },
- { url = "*.sln", use = "VS" },
- { url = "*/", use = ["MICRO", "open", "reveal", "lazygit", "lazygit-filter"] },
-]
-append_rules = [
- { url = "*", use = [ "MICRO", "VSC", "open", "reveal" ] }
+rules = [
+	{ url = "*.sln", use = ["rider", "VS"]},
+	{ mime = "text/plain", use = ["micro", "code", "rider"] },
+	{ mime = "text/script.python", use = ["micro", "code"] },
+	{ mime = "text/shellscript", use = ["micro", "code"] },
+	{ mime = "application/json", use = ["code", "micro", "rider"] },
+	{ mime = "text/*", use = ["micro", "code", "rider"] },
+	{ url = "*/", use = ["micro-new", "reveal", "code", "open"] }
 ]
